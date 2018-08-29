@@ -50,6 +50,9 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
+" ctag
+Plugin 'taglist.vim'
+
 
 "Plugin 'tomasr/molokai'
 " Plugin 'Yggdroot/indentLine'
@@ -111,6 +114,8 @@ let g:ctrlp_custom_ignore = {
             \ 'link': 'some_bad_symbolic_links',
             \ }
 let g:ctrlp_user_command = 'find %s -type f'
+
+
 
 func! CIndent()
 " GNU Coding Standards
@@ -203,6 +208,7 @@ nnoremap <c-j> :m+<cr>
 nnoremap <c-k> :m-2<cr>
 nnoremap <c-h> :tabp<cr>
 nnoremap <c-l> :tabn<cr>
+
 nmap <C-b>n  :bnext<CR>
 nmap <C-b>p  :bprev<CR>
 
