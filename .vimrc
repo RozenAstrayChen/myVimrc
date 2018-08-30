@@ -1,14 +1,14 @@
-set runtimepath+=~/.vim_runtime
+"set runtimepath+=~/.vim_runtime
 
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+"source ~/.vim_runtime/vimrcs/basic.vim
+"source ~/.vim_runtime/vimrcs/filetypes.vim
+"source ~/.vim_runtime/vimrcs/plugins_config.vim
+"source ~/.vim_runtime/vimrcs/extended.vim
 
-try
-source ~/.vim_runtime/my_configs.vim
-catch
-endtry
+"try
+"source ~/.vim_runtime/my_configs.vim
+"catch
+"endtry
 
 set nocompatible " be iMproved, required
 filetype off " required
@@ -54,7 +54,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'taglist.vim'
 
 
-"Plugin 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 " Plugin 'Yggdroot/indentLine'
 " Plugin 'nathanaelkane/vim-indent-guides'
 " All of your Plugins must be added before the following line
@@ -231,6 +231,10 @@ autocmd VimEnter * nested :TagbarOpen
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 colorscheme molokai
 let g:airline_powerline_fonts = 1
+
+"NERDTRee
+let g:NERDTreeWinSize=20
+let g:NERDTreeWinPos= "right"
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
