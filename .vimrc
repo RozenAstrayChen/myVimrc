@@ -52,7 +52,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 " ctag
 Plugin 'taglist.vim'
-
+" yapf
+Plugin 'mindriot101/vim-yapf'
 
 Plugin 'tomasr/molokai'
 " Plugin 'Yggdroot/indentLine'
@@ -197,13 +198,15 @@ endf
 
 
 " ------------
+" keymap
 
-set pastetoggle=<F2>
+nmap <F2> :TagbarToggle<CR>
 nmap <F3> :NERDTreeToggle<cr>
+nmap <F4> :call Yapf()<cr>
 nnoremap <F5> :call Compile()<cr>
 nnoremap <F6> :call Compile('with_arg')<cr>
 nnoremap <F7> :call CodeStyle()<cr>
-nmap <F8> :TagbarToggle<CR>
+set pastetoggle=<F8>
 nnoremap <c-j> :m+<cr>
 nnoremap <c-k> :m-2<cr>
 nnoremap <c-h> :tabp<cr>
@@ -215,6 +218,16 @@ nmap <C-b>p  :bprev<CR>
 vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
 
+nnoremap <c-z> :u<CR>      " Avoid using this**
+inoremap <c-z> <c-o>:u<CR>
+
+
+" tmux using
+" copy to buffer
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+map <C-v> :r ~/.vimbuffer<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
