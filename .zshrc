@@ -101,6 +101,14 @@ eval "$(pyenv init -)"
 export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+# nccl
+export LD_LIBRARY_PATH=/usr/local/cuda-9.2/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
+export 
 export PATH="$PATH:$HOME/bin"
 
 alias go_Code='source go_Code.sh'
+# mujoco
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rozen/.mujoco/mjpro150/bin
+# gl
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+#export CUDA_VISIBLE_DEVICES=''

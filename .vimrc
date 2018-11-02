@@ -95,7 +95,10 @@ set cursorline
 set background=dark
 set hlsearch
 set encoding=utf-8
-
+" ( [ "
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
 
 syntax enable
 let g:molokai_original = 1
@@ -207,6 +210,8 @@ nnoremap <F5> :call Compile()<cr>
 nnoremap <F6> :call Compile('with_arg')<cr>
 nnoremap <F7> :call CodeStyle()<cr>
 set pastetoggle=<F8>
+"nnoremap <F9> :TlistToggle<CR>
+
 nnoremap <c-j> :m+<cr>
 nnoremap <c-k> :m-2<cr>
 nnoremap <c-h> :tabp<cr>
@@ -240,7 +245,8 @@ let g:tagbar_width = 30
 autocmd VimEnter * nested :TagbarOpen
 "autocmd FileType * nested :call tagbar#autoopen(0)
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
-
+" close view when autocomplete
+let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 colorscheme molokai
 let g:airline_powerline_fonts = 1
