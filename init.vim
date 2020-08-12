@@ -52,6 +52,7 @@ call plug#end()
 
 
 "##################################按键设置##################################
+let mapleader = ","
 " mouse open
 set mouse=a
 " F2 Open Tagbar
