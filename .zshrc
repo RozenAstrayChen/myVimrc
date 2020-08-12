@@ -1,33 +1,51 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/rozen/.oh-my-zsh"
+export ZSH="/Users/rozen/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
+#ZSH_THEME="robbyrussell"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+ZSH_THEME="powerlevel9k/powerlevel9k"
+# 左側
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+# 右側
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
+# 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
+#DEFAULT_USER="xxx"
+# 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
+#POWERLEVEL9K_MODE='nerdfont-complete'
+
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -57,13 +75,12 @@ ZSH_THEME="bullet-train"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,9 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -95,20 +109,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
-# nccl
-export LD_LIBRARY_PATH=/usr/local/cuda-9.2/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
-export 
-export PATH="$PATH:$HOME/bin"
+#
+alias go_Code='cd ~/code/'
+alias l='ls'
+alias ppt='ssh bbsu@ppt.cc'
+alias neaf='ssh -i /Users/rozen/lab/id_rsa.pem neaf@140.114.58.102'
+# 8230
 
-alias go_Code='source go_Code.sh'
-# mujoco
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/rozen/.mujoco/mjpro150/bin
-# gl
-export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
-#export CUDA_VISIBLE_DEVICES=''
+export COPPELIASIM_ROOT="/Users/rozen/code/CoppeliaSim_Edu_V4_0_0_Mac"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$COPPELIASIM_ROOT
+export QT_QPA_PLATFORM_PLUGIN_PATH=$COPPELIASIM_ROOT
+export PATH="/usr/local/opt/apr-util/bin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
