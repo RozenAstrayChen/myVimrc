@@ -114,6 +114,8 @@ alias go_Code='cd ~/code/'
 alias l='ls'
 alias ppt='ssh bbsu@ppt.cc'
 alias neaf='ssh -i /Users/rozen/lab/id_rsa.pem neaf@140.114.58.102'
+#scp command
+SCPneaf() {scp "$@" -i /Users/rozen/lab/id_rsa.pem neaf@140.114.58.102:/home/neaf/SCP_temp}
 # 8230
 
 export COPPELIASIM_ROOT="/Users/rozen/code/CoppeliaSim_Edu_V4_0_0_Mac"
